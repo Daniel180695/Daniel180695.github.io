@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Daniel Ciobanu</title>
 
 <!--[if lt IE 9]>
@@ -19,13 +18,16 @@
 <link rel="stylesheet" media="screen and (max-width:480px)" href="files/mobile.css">
 <link rel="stylesheet" media="screen and (min-width:481px)" href="files/cv.css">
 <link rel="stylesheet" media="print" href="files/print.css">
+<script src="files/react.production.min.js"></script>
 <script src="files/jquery-3.3.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
 <script src="files/jasc.js"></script>
 <link rel="stylesheet" href="files/style.css">
 </head>
 
 <body>
+
 
 	<!-- Header -->
 	<header role="banner">
@@ -39,42 +41,6 @@
 							</span>
 						  </h3>
 				</hgroup>
-	<script>
-		$('.ml11 .letters').each(function(){
-		$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-		});
-
-		anime.timeline({loop: true})
-		.add({
-		targets: '.ml11 .line',
-		scaleY: [0,1],
-		opacity: [0.5,1],
-		easing: "easeOutExpo",
-		duration: 700
-		})
-		.add({
-		targets: '.ml11 .line',
-		translateX: [0,$(".ml11 .letters").width()],
-		easing: "easeOutExpo",
-		duration: 700,
-		delay: 100
-		}).add({
-		targets: '.ml11 .letter',
-		opacity: [0,1],
-		easing: "easeOutExpo",
-		duration: 600,
-		offset: '-=775',
-		delay: function(el, i) {
-		return 34 * (i+1)
-		}
-		}).add({
-		targets: '.ml11',
-		opacity: 0,
-		duration: 1000,
-		easing: "easeOutExpo",
-		delay: 1000
-		});
-	</script>
 				<figure>
 					<img src="files/avatar.jpg" alt="Ciobanu Ionut-Daniel">
 				</figure>
@@ -117,16 +83,16 @@
 			<div class="grid_8 competences">
 				<h3>Skills</h3>
 				<ul class="barres">
-					<li data-skills="80">PHP<span style="width: 80%;"></span></li>
-					<li data-skills="80">MySQL<span style="width: 80%;"></span></li>
-					<li data-skills="80">SQL<span style="width: 80%;"></span></li>
-					<li data-skills="70">PL/SQL<span style="width: 70%;"></span></li>
-					<li data-skills="65">JavaScript<span style="width: 65%;"></span></li>
-					<li data-skills="60">C#<span style="width: 60%;"></span></li>
-					<li data-skills="50">Bash(Linux Scripting)<span style="width: 50%;"></span></li>
-					<li data-skills="40">Python<span style="width: 40%;"></span></li>
-					<li data-skills="40">Servers Knowledge<span style="width: 40%;"></span></li>
-					<li data-skills="40">Automation<span style="width:40%;"></span></li>
+					<li class="skl" data-skills="80">PHP<span style="width: 80%;"></span></li>
+					<li class="skl" data-skills="80">MySQL<span style="width: 80%;"></span></li>
+					<li class="skl" data-skills="80">SQL<span style="width: 80%;"></span></li>
+					<li class="skl" data-skills="70">PL/SQL<span style="width: 70%;"></span></li>
+					<li class="skl" data-skills="65">JavaScript<span style="width: 65%;"></span></li>
+					<li class="skl" data-skills="60">C#<span style="width: 60%;"></span></li>
+					<li class="skl" data-skills="50">Bash(Linux Scripting)<span style="width: 50%;"></span></li>
+					<li class="skl" data-skills="40">Python<span style="width: 40%;"></span></li>
+					<li class="skl" data-skills="40">Servers Knowledge<span style="width: 40%;"></span></li>
+					<li class="skl" data-skills="40">Automation<span style="width:40%;"></span></li>
 					
 				</ul>
 			</div>
@@ -239,11 +205,61 @@
 								<li class="mail"> • Adobe PhotoShop</li>
 							</ul>
 						</div>
+						
 	</section>
 
+	<script>
+
+			// ScrollReveal().reveal('.lieu');
+			// ScrollReveal().reveal('.mail');
+			// ScrollReveal().reveal('.phone');
+			// ScrollReveal().reveal('.barres');
+			// ScrollReveal().reveal('.dates');
+			// ScrollReveal().reveal('.skl');
+			// // ScrollReveal().reveal('.barres');
+			
+
+			$('.ml11 .letters').each(function(){
+			$(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+			});
+	
+			anime.timeline({loop: true})
+			.add({
+			targets: '.ml11 .line',
+			scaleY: [0,1],
+			opacity: [0.5,1],
+			easing: "easeOutExpo",
+			duration: 700
+			})
+			.add({
+			targets: '.ml11 .line',
+			translateX: [0,$(".ml11 .letters").width()],
+			easing: "easeOutExpo",
+			duration: 700,
+			delay: 100
+			}).add({
+			targets: '.ml11 .letter',
+			opacity: [0,1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=775',
+			delay: function(el, i) {
+			return 34 * (i+1)
+			}
+			}).add({
+			targets: '.ml11',
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+			});
+		</script>
+	
 	
 
 <!-- Scripts JavaScript -->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="files/scroll.js"></script>
 <script src="files/jquery-1.js"></script>
 <script src="files/validate.js"></script>
 <!--[if lt IE 9]>
